@@ -1,0 +1,26 @@
+<mat-card class="mt-2">
+
+    <div class="container text-center my-4">
+        <h1 class="bg-primary rounded-pill text-white  p-1"><u>All Category</u></h1>
+    </div>
+    <button routerLink="/admin/add-category" class="btn btn-outline-success btn-sm">Add Category</button>
+    <mat-list>
+        <mat-list-item *ngFor="let cat of categories">
+            <mat-icon mat-list-icon><img class="category-icon" src="../../../../assets/alllogo/category.png" alt="">
+            </mat-icon>
+            <div mat-line class="my-1 mx-4"><a href="">{{cat.title}}</a></div>
+            <div mat-line class="mx-4">{{cat.description}}</div>
+            <button class="mx-2" mat-icon-button color="accent" [routerLink]="'/admin/update-category/'+cat.cid">
+        <mat-icon>edit_note</mat-icon>
+      </button>
+
+            <button mat-icon-button color="warn" (click)="deleteCategory(cat.cid)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+
+
+</mat-card>

@@ -1,0 +1,53 @@
+<div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 my-4">
+                <mat-card class="shadow-lg p-3 mb-5 bg-body rounded">
+                    <div class="container text-center">
+                        <h1 class="text-center mt-2 bg-primary text-white rounded-pill">
+                            <u>Login</u>
+                        </h1>
+
+                        <img class="logo" src="../../../assets/alllogo/login.png" alt="" />
+                        <hr />
+
+                        <!-- {{ loginData | json }} -->
+
+                        <form action="" (ngSubmit)="formSubmit()">
+                            <!-- Username -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input [(ngModel)]="loginData.username" name="username" matInput placeholder="Enter here" />
+                            </mat-form-field>
+
+                            <!-- Password -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Enter your password</mat-label>
+                                <input [(ngModel)]="loginData.password" name="password" matInput [type]="hide ? 'password' : 'text'" />
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                </button>
+                            </mat-form-field>
+
+                            <div class="container text-center">
+                                <button type="submit" mat-flat-button color="primary" class="me-5">
+                  Login
+                </button>
+                                <button type="reset" mat-raised-button class="bg-warning">
+                  Reset
+                </button>
+                            </div>
+                        </form>
+                        <hr />
+
+                        <div class="mt-5">
+                            <a class="btn btn-success" routerLink="/signup">CREATE NEW ACCOUNT</a>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

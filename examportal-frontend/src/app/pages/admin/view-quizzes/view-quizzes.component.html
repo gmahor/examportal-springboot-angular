@@ -1,0 +1,35 @@
+<div class="container mt-2 ">
+
+    <mat-card>
+        <h1 class="text-white text-center bg-primary rounded-pill p-1">All Quizzes</h1>
+
+        <a routerLink="/admin/add-quiz" class="btn btn-outline-success">Add Quiz</a>
+
+        <mat-card class="mr-5 my-2" *ngFor="let q of quizzes">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>
+                    <a [routerLink]="" (click)='singleQuiz(q.qid)' class="removeStyle"> {{q.title}}</a>
+                </mat-card-title>
+                <button mat-icon-button class="ms-5" color="warn" (click)="deleteQuiz(q.qid)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <mat-card-subtitle>
+                    {{q.category.title}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{q.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button [routerLink]="'/admin/view-questions/'+q.qid+'/'+q.title" mat-flat-button color="accent" class="mx-2">Question</button>
+                <button mat-stroked-button color="primary" class="mx-2">Max Marks: {{q.maxMarks}}</button>
+                <button mat-stroked-button color="primary" class="mx-2">Question: {{q.numberOfQuestions}}</button>
+                <button [routerLink]="'/admin/update-quiz/'+ q.qid" mat-flat-button color="accent" class="mx-2 my-1">Update</button>
+                <button mat-flat-button color="accent" class="mx-2">Attempts</button>
+            </mat-card-actions>
+        </mat-card>
+
+    </mat-card>
+
+</div>

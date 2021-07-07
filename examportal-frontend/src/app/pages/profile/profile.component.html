@@ -1,0 +1,72 @@
+<mat-card class="my-2">
+  <div class="container text-center">
+    <h1 class="bg-primary rounded-pill text-white p-1">
+      <u><b>Your Profile Details</b></u>
+    </h1>
+
+    <!-- {{user | json}} -->
+
+    <hr />
+    <mat-card-content>
+      <img
+        class="user_profile"
+        src="../../../../assets/alllogo/user.png"
+        alt=""
+      />
+
+
+      <h1 *ngIf="user"  class="mt-2 fs-1">Name : {{user.firstName }} {{user.lastName}}</h1>
+
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+          <!--  table details -->
+
+          <table class="table ">
+            <tbody>
+
+              <tr>
+                <td class="fw-bold">Username  </td>
+                <td>=</td>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">User Id  </td>
+                <td>=</td>
+                <td>Exam{{user.id}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Email  </td>
+                <td>=</td>
+                <td>{{user.email}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Phone no.  </td>
+                <td>=</td>
+                <td>{{user.phone}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Role  </td>
+                <td>=</td>
+                <td>{{user.authorities[0].authority}}</td>
+              </tr>
+              <tr>
+                <td class="fw-bold">Status  </td>
+                <td>=</td>
+                <td>ACTIVE</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="warn">SHARE</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+  </div>
+</mat-card>

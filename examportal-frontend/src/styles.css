@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.logo {
+    width: 20%;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+/* admin dashboard user_profile - welcome */
+
+.user_profile {
+    width: 25%;
+}
+
+.hr-line {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+/* category-icon */
+
+.category-icon {
+    width: 150%;
+    margin-right: 3%;
+}

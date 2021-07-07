@@ -1,0 +1,68 @@
+<div class="container my-2">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <h1 class="text-center text-white bg-primary rounded-pill p-1">
+                    Questions of : ( <u>{{ qTitle }}</u> )
+                </h1>
+
+                <!-- {{questions|json}} -->
+
+                <a routerLink="/admin/add-question/{{qId}}/{{qTitle}}" class="btn btn-outline-success">Add Question</a>
+
+                <hr>
+                <mat-card *ngFor="let q of questions; let i=index " class="my-2 ">
+                    <mat-card-content>
+                        <h2>
+                            <b>Q{{ i + 1 }}</b><span> : {{ q.content }} </span>
+                        </h2>
+                        <div class="container-fluid ">
+                            <div class="row ">
+                                <div class="col-md-6 ">
+                                    <p>
+                                        a) : <span>{{ q.option1 }}</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <p>
+                                        b) : <span>{{ q.option2 }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-6 ">
+                                    <p>
+                                        c) : <span>{{ q.option3 }}</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <p>
+                                        d) : <span>{{ q.option4 }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <p class="my-2"><span><b>Correct Answer</b> : {{q.answer}}</span>
+                        </p>
+                        <mat-divider></mat-divider>
+                        <div class="row">
+                            <div class="col-6 text-left">
+                                <button mat-raised-button color="warn" class="mx-5 my-2 " (click)="quizQuestion(q.quesId)">
+                                        Delete
+                                    </button>
+                            </div>
+
+                            <div class="col-6 text-right">
+                                <button mat-raised-button color="accent" class="my-2" [routerLink]="'/admin/update-question/'+ q.quesId+'/'+qTitle+'/'+qId">
+                                        Update
+                                    </button>
+                            </div>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<mat-card class="mt-2">
+
+    <div class="container text-center">
+        <h1 class="bg-primary rounded-pill text-white">Add Question To : ( <u>{{qTitle}}</u> ) </h1>
+
+        <hr>
+
+        <img class="user_profile" src="../../../../assets/alllogo/question.png" alt="">
+
+    </div>
+    <form (ngSubmit)="formSubmit()">
+
+        <!-- {{question|json}} -->
+
+        <!-- quiestion content -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Question-content</b></mat-label>
+            <input [(ngModel)]="question.content" name="content" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <!-- quiestion option1 -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Question-option1</b></mat-label>
+            <input [(ngModel)]="question.option1" name="option1" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <!-- quiestion option2 -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Question-option2</b></mat-label>
+            <input [(ngModel)]="question.option2" name="option2" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <!-- quiestion option3 -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Question-option3</b></mat-label>
+            <input [(ngModel)]="question.option3" name="option3" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <!-- quiestion option4 -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Question-option4</b></mat-label>
+            <input [(ngModel)]="question.option4" name="option4" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <!-- quiestion answer -->
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label><b>Answer</b></mat-label>
+            <input [(ngModel)]="question.answer" name="answer" type="text" matInput placeholder="Enter title..." />
+        </mat-form-field>
+
+        <hr>
+
+        <div class="container text-center">
+
+            <button type="submit" mat-flat-button color="primary" class="me-5">
+                Add-Question
+            </button>
+            <button type="reset" mat-raised-button class="bg-warning">
+                Reset
+            </button>
+        </div>
+
+
+    </form>
+
+</mat-card>

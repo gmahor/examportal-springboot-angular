@@ -1,0 +1,8 @@
+.example-header-image {
+    background-image: url(../../../../assets/alllogo/quiz.png);
+    background-size: cover;
+}
+
+.removeStyle {
+    text-decoration: none;
+}

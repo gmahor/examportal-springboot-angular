@@ -1,0 +1,41 @@
+<mat-card class="mt-2">
+
+  <div class="container text-center">
+    <h1 class="bg-primary rounded-pill text-white">Add Category</h1>
+
+    <hr>
+
+    <img class="user_profile" src="../../../../assets/alllogo/category.png" alt="">
+
+  </div>
+  <form (ngSubmit)="formSubmit()">
+
+    <!-- {{category|json}} -->
+
+    <!-- category title -->
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Category-title</mat-label>
+      <input [(ngModel)]="category.title" name="title" type="text" matInput placeholder="Enter category-title..." />
+    </mat-form-field>
+
+    <!-- category description -->
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Category-description</mat-label>
+      <textarea [(ngModel)]="category.description" name="description" matInput cols="" rows="10"
+        placeholder="Enter description..."></textarea>
+    </mat-form-field>
+
+    <div class="container text-center">
+
+      <button type="submit" mat-flat-button color="primary" class="me-5">
+        Add-Category
+      </button>
+      <button type="reset" mat-raised-button class="bg-warning">
+        Reset
+      </button>
+    </div>
+
+
+  </form>
+
+</mat-card>
